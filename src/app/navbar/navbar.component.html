@@ -1,0 +1,81 @@
+<div *ngIf="logged; else elseBlock">
+<mat-toolbar color="primary">
+    <button mat-icon-button aria-label="menu" (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="title">Customer Portal</h1>
+    <button mat-button [matMenuTriggerFor]="submenu" >
+        <mat-icon matListAvatar>account_box</mat-icon>
+    </button>
+    <mat-menu #submenu="matMenu">
+
+        <button (click)="logout()" mat-menu-item>
+            Logout</button>
+            
+        <!-- <button mat-menu-item>
+            <a id="login" mat-list-item [routerLink]="['']" (click)="sidenav.close()">
+            Logout
+        </a></button> -->
+        <!-- <button mat-menu-item [matMenuTriggerFor]="submenu2">Sub-menu 2</button> -->
+    </mat-menu>
+    <!-- <mat-menu #submenu2="matMenu">
+        <button mat-menu-item>Menu Item 1</button>
+        <button mat-menu-item>Menu Item 2</button>
+        <button mat-menu-item>Menu Item 3</button>
+    </mat-menu> -->
+</mat-toolbar>
+
+<mat-sidenav-container >
+    <mat-sidenav [disableClose]="false" mode="push" mat-list-item  #sidenav  [autoFocus]="false" >
+        <mat-nav-list  >
+            <a id="profile"  mat-list-item [routerLink]="['./profile']" (click)="sidenav.close()" routerLinkActive="active" >
+                <mat-icon matListAvatar>perm_contact_calendar</mat-icon>
+                <h3>User Profile</h3>
+            </a>
+             
+            <div mat-subheader>Customer Dashboard</div>
+            <a id="inquiry" mat-list-item [routerLink]="['./inquiry']" (click)="sidenav.close()" routerLinkActive="active">
+                <mat-icon matListAvatar>table_chart</mat-icon>
+                <h3>Inquiry Data</h3>
+            </a>
+            <a id="sale" mat-list-item [routerLink]="['./sale']" (click)="sidenav.close()" routerLinkActive="active">
+                <mat-icon matListAvatar>fact_check</mat-icon>
+                <h3>Sale Order Data</h3>
+            </a>
+            <a id="list" mat-list-item [routerLink]="['./list']" (click)="sidenav.close()" routerLinkActive="active">
+                <mat-icon matListAvatar>pending_actions</mat-icon>
+                <h3>List of Delivery</h3>
+            </a>
+
+            <div mat-subheader>Customer Financial Sheet</div>
+            <a id="invoice" mat-list-item [routerLink]="['./invoice']" (click)="sidenav.close()" routerLinkActive="active">
+                <mat-icon matListAvatar>receipt</mat-icon>
+                <h3>Invoice Details</h3>
+            </a>
+            <a id="payment" mat-list-item [routerLink]="['./payment-aging']" (click)="sidenav.close()" routerLinkActive="active">
+                <mat-icon matListAvatar>receipt</mat-icon>
+                <h3>Payments & Aging</h3>
+            </a>
+            <a id="credit" mat-list-item [routerLink]="['./credit-debit']" (click)="sidenav.close()" routerLinkActive="active">
+                <mat-icon matListAvatar>receipt</mat-icon>
+                <h3>Credit/Debit memo</h3>
+            </a>
+            <a id="overall" mat-list-item [routerLink]="['./overallSales']" (click)="sidenav.close()" routerLinkActive="active">
+                <mat-icon matListAvatar>receipt</mat-icon>
+                <h3>Overall sales data</h3>
+            </a>
+<!-- 
+            <div mat-subheader>Customer Master Data</div>
+            <a id="overall" mat-list-item [routerLink]="['./overallSales']" (click)="sidenav.close()" routerLinkActive="active">
+                <mat-icon matListAvatar>receipt</mat-icon>
+                <h3>upload</h3>
+            </a> -->
+            
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content style="background-color:#8d31e1; padding: 3rem;"> 
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+</div>
+<ng-template #elseBlock><app-login-page></app-login-page></ng-template>

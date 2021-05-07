@@ -1,0 +1,73 @@
+.login-page {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(137, 43, 226, 0.671);
+}
+
+.login-spacer {
+    height: 20vh;
+}
+
+.login-container {
+    margin: auto;
+    width: 400px;
+    padding: 2vh;
+    background-color: #fff;
+    height: 23em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+    border-radius: 16px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    margin: 3vh;
+}
+
+#login-fab {
+    border-radius: 50%;
+    height: 70px;
+    margin: auto;
+    min-width: 70px;
+    width: 70px;
+    background: rgb(63, 81, 181);
+    box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, .12), 0 1px 1px 0 rgba(0, 0, 0, .24);
+    margin-top: -35px;
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+
+#lock-icon {
+    line-height: 70px;
+    color: #fff;
+}
+
+.card-heading {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.31);
+}
+
+.buttons .login {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+.buttons .login>button {
+    width: 100%;
+}
+
+.buttons .register {
+    display: flex;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    justify-content: space-between;
+}
