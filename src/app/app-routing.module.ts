@@ -10,8 +10,11 @@ import {InvoiceComponent} from './invoice/invoice.component';
 import {CreditDebitComponent} from './credit-debit/credit-debit.component'
 import {PaymentComponent} from './payment/payment.component'
 import {OverallSalesComponent} from './overall-sales/overall-sales.component'
+import {MasterUploadComponent} from './master-upload/master-upload.component'
+import {CustomerProfileViewComponent} from './customer-profile-view/customer-profile-view.component'
 
 const routes: Routes = [
+  
   {path:'', component:LoginPageComponent},
   {path:'profile', component:CustomerProfileComponent},
   {path:'inquiry', component:InquiryDataComponent},
@@ -21,7 +24,10 @@ const routes: Routes = [
   {path:'credit-debit',component:CreditDebitComponent},
   {path:'payment-aging',component:PaymentComponent},
   {path:'overallSales',component:OverallSalesComponent},
-  {path:'invoice',component:InvoiceComponent}
+  {path:'invoice',component:InvoiceComponent},
+  {path:'master-upload',component:MasterUploadComponent},
+  {path:'profile-view', component:CustomerProfileViewComponent},
+  { path: '**', component: LoginPageComponent }
 ];
 
 @NgModule({

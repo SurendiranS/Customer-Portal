@@ -32,6 +32,8 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { PaymentComponent } from './payment/payment.component';
 import { CreditDebitComponent } from './credit-debit/credit-debit.component';
 import { OverallSalesComponent } from './overall-sales/overall-sales.component';
+import { MasterUploadComponent } from './master-upload/master-upload.component';
+import { CustomerProfileViewComponent } from './customer-profile-view/customer-profile-view.component';
 
 
 
@@ -49,7 +51,9 @@ import { OverallSalesComponent } from './overall-sales/overall-sales.component';
     InvoiceComponent,
     PaymentComponent,
     CreditDebitComponent,
-    OverallSalesComponent
+    OverallSalesComponent,
+    MasterUploadComponent,
+    CustomerProfileViewComponent
   ],
   imports: [
     BrowserModule,

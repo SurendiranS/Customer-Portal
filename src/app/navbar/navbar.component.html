@@ -8,10 +8,13 @@
         <mat-icon matListAvatar>account_box</mat-icon>
     </button>
     <mat-menu #submenu="matMenu">
-
+        <button [routerLink]="['./profile-view']" (click)="sidenav.close()" mat-menu-item> Update Profile</button>
         <button (click)="logout()" mat-menu-item>
             Logout</button>
-            
+            <!-- <a id="profile"  mat-list-item [routerLink]="['./profile']" (click)="sidenav.close()" routerLinkActive="active" >
+                <mat-icon matListAvatar>perm_contact_calendar</mat-icon>
+                <h3>User Profile</h3>
+             -->
         <!-- <button mat-menu-item>
             <a id="login" mat-list-item [routerLink]="['']" (click)="sidenav.close()">
             Logout
@@ -25,13 +28,13 @@
     </mat-menu> -->
 </mat-toolbar>
 
-<mat-sidenav-container >
+<mat-sidenav-container  >
     <mat-sidenav [disableClose]="false" mode="push" mat-list-item  #sidenav  [autoFocus]="false" >
         <mat-nav-list  >
-            <a id="profile"  mat-list-item [routerLink]="['./profile']" (click)="sidenav.close()" routerLinkActive="active" >
+            <!-- <a id="profile"  mat-list-item [routerLink]="['./profile']" (click)="sidenav.close()" routerLinkActive="active" >
                 <mat-icon matListAvatar>perm_contact_calendar</mat-icon>
                 <h3>User Profile</h3>
-            </a>
+            </a> -->
              
             <div mat-subheader>Customer Dashboard</div>
             <a id="inquiry" mat-list-item [routerLink]="['./inquiry']" (click)="sidenav.close()" routerLinkActive="active">
@@ -64,12 +67,12 @@
                 <mat-icon matListAvatar>receipt</mat-icon>
                 <h3>Overall sales data</h3>
             </a>
-<!-- 
-            <div mat-subheader>Customer Master Data</div>
-            <a id="overall" mat-list-item [routerLink]="['./overallSales']" (click)="sidenav.close()" routerLinkActive="active">
+
+            <!-- <div mat-subheader>Customer Master Data</div> -->
+            <a id="master-upload" mat-list-item [routerLink]="['./master-upload']" (click)="sidenav.close()" routerLinkActive="active">
                 <mat-icon matListAvatar>receipt</mat-icon>
-                <h3>upload</h3>
-            </a> -->
+                <h3>Master Data Upload</h3>
+            </a>
             
         </mat-nav-list>
     </mat-sidenav>
