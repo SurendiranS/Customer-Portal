@@ -1,0 +1,58 @@
+
+<!-- https://github.com/ShankyTiwari/Angular-material-login-template/blob/master/src/app/app.component.html -->
+<div class="login-page">
+  <div class="login-spacer"></div>
+  <div class="login-container">
+    <div id="login-fab" class="mdl-color--accent mdl-color-text--white">
+      <i id="lock-icon" class="material-icons">lock</i>
+    </div>
+
+    <form class="login-form" novalidate (ngSubmit)="onSubmit()">
+      <h2 class="card-heading">
+        User Login
+      </h2>
+      <mat-form-field>
+        <input matInput type="text" placeholder='Username' required #uid="ngModel"
+          [class.is-invalid]="uid.invalid && uid.touched" class="form-control" name='username'
+          [(ngModel)]='credentialsModel.userName'>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" placeholder='Password' required #pwd='ngModel'
+          [class.is-invalid]="pwd.invalid && pwd.touched" class="form-control" name='password'
+          [(ngModel)]='credentialsModel.password'>
+      </mat-form-field>
+
+      <div class="buttons">
+        <div class="login">
+          <button mat-raised-button color="primary"
+            [disabled]='pwd.pristine || uid.unvalid ||uid.untouched'>
+            Login</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+<!-- 
+
+<div class="container">
+  <form novalidate (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input type="text" placeholder='Username' required #uid="ngModel" [class.is-invalid]="uid.invalid && uid.touched"
+        class="form-control" name='username' [(ngModel)]='credentialsModel.userName'>
+      <small class='text-danger' [class.d-none]="uid.valid || uid.untouched"> Enter User Name</small>
+    </div>
+    <div class="form-group">
+      <input type="password" placeholder='Password' required #pwd='ngModel'
+        [class.is-invalid]="pwd.invalid && pwd.touched" class="form-control" name='password'
+        [(ngModel)]='credentialsModel.password'>
+      <small class='text-danger' [class.d-none]="pwd.valid || pwd.untouched">Enter Password</small>
+    </div>
+    <button [disabled]='pwd.unvalid || pwd.untouched|| uid.unvalid ||uid.untouched' class="btn btn-primary">
+      Login</button>
+  </form>
+</div> -->
