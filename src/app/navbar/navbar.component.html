@@ -3,10 +3,12 @@
     <button mat-icon-button aria-label="menu" (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
     </button>
-    <h1 class="title">Customer Portal</h1>
+    <h1 class="title">Customer Portal </h1>
     <button mat-button [matMenuTriggerFor]="submenu" >
-        <mat-icon matListAvatar>account_box</mat-icon>
+        <mat-icon matListAvatar>account_circle</mat-icon>
+        {{custid}}
     </button>
+    
     <mat-menu #submenu="matMenu">
         <button [routerLink]="['./profile-view']" (click)="sidenav.close()" mat-menu-item> Update Profile</button>
         <button (click)="logout()" mat-menu-item>

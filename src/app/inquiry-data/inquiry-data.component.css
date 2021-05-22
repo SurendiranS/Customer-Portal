@@ -14,7 +14,8 @@ th {
 
 
 .example-container {
-    height: 425px;
+    height: auto;
     overflow: auto;
-    padding-bottom: 3rem;
+    /* padding-bottom: 3rem; */
+    margin-bottom: 3rem;
   }

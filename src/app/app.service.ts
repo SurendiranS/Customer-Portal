@@ -6,8 +6,10 @@ import {BehaviorSubject} from 'rxjs';
   providedIn: 'root'
 })
 export class AppService {
+  private custid = new BehaviorSubject<string>(" ");
   private logged= new BehaviorSubject<boolean>(false);
   public loggedOber = this.logged.asObservable();
+  public custidOber = this.custid.asObservable();
   constructor() { }
 
   login(){
@@ -15,5 +17,8 @@ export class AppService {
   }
   logout(){
     this.logged.next(false);
+  }
+  custidUpdate(t:string){
+    this.custid.next(t);
   }
 }

@@ -12,6 +12,7 @@ const request = require('request');
 const bodyParser = require("body-parser");
 const app = express();
 app.use(bodyParser.json());
+
 // for angular sserver connection
 app.use(function (req, res, next) {
 
@@ -20,24 +21,17 @@ app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Methods", "*");
     next();
 });
+
 app.post('/login', (req, res) => {
-    // uname = req.body.username.toUpperCase();
-    // pass = req.body.password.toUpperCase();
-    //    const uname = '0000007005';
-    //    const pass = '1234567890';
-    console.log("sending request");
-    const postData = `<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:rfc:functions">
-        <soapenv:Header/>
-        <soapenv:Body>
-        <urn:ZROY_UN_PASS_FM>
-            <!--You may enter the following 2 items in any order-->
-            <UNAME>1</UNAME>
-            <PASS>011</PASS>
-        </urn:ZROY_UN_PASS_FM>
-        </soapenv:Body>
-    </soapenv:Envelope>`;
+    const username = req.body.username;
+    const pwd = req.body.password;
+    const postData = `<?xml version="1.0" encoding="UTF-8"?>
+    <ns0:MT_RFC_REQ xmlns:ns0="http://pooja_custom_auth.com">
+      <USERNAME>${username}</USERNAME>
+       <PASSWORD>${pwd}</PASSWORD>
+    </ns0:MT_RFC_REQ>`;
     var options = {
-        url: 'http://dxktpipo.kaarcloud.com:50000/XISOAPAdapter/MessageServlet?senderParty=&senderService=BC_ROY_PORTAL&receiverParty=&receiverService=&interface=SI_ROY_PORTAL_UN_PASS&interfaceNamespace=http://royportal.com',
+        url: 'http://dxktpipo.kaarcloud.com:50000/RESTAdapter/authentication',
         headers: {
             'Content-Type': 'application/xml',
             'Authorization': 'Basic UE9VU0VSOlRlY2hAMjAyMQ=='
@@ -46,14 +40,57 @@ app.post('/login', (req, res) => {
     }
     request.post(options, function (error, response, body) {
         if (!error && response.statusCode == 200) {
-            var result1 = parser.xml2json(body, { compact: true, spaces: 4 });
-            result1 = JSON.parse(result1);
-            var resp = result1['SOAP:Envelope']['SOAP:Body']['ns0:ZROY_UN_PASS_FM.Response']['SUCCESS'];
-            res.send(resp);
-            // res.send(result1);
+            let json = JSON.parse(response.body);
+            res.send(json);
+            console.log(json);
+            var time = new Date();
+console.log(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
+        }
+        else {
+            console.log("error");
         }
     })
-});
+})
+
+// --------------------------------------------------------------------------------------------------
+//customer inquiry
+
+app.post('/inquiry', (req, res) => {
+    // const username=req.body.id;
+    const username = 0000000018;
+    //username=parseInt(id);
+    //const pwd=req.body.password;
+    const postData = `<?xml version="1.0" encoding="UTF-8"?>
+    <ns0:MT_CUST_INQ_REQ xmlns:ns0="http://pooja_custom_inquirydetails.com">
+      <CUSTOMER_ID>${username}</CUSTOMER_ID>
+    </ns0:MT_CUST_INQ_REQ>`;
+    var options = {
+        url: 'http://dxktpipo.kaarcloud.com:50000/RESTAdapter/poo/inquiry',
+        headers: {
+            'Content-Type': 'application/xml',
+            'Authorization': 'Basic UE9VU0VSOlRlY2hAMjAyMQ=='
+        },
+        body: postData
+    }
+    request.post(options, function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            let json = [];
+            let json1 = JSON.parse(response.body);
+            json1 = json1['IT_FINAL'];
+            json.push(json1);
+            res.send(json);
+            console.log(json);
+            var time = new Date();
+console.log(time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds());
+        } else {
+            console.log("error")
+        }
+    })
+})
+
+
+
+
 
 // --------------------------------------------------------------------------------------------------
 

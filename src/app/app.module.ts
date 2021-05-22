@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import {HttpClientModule} from '@angular/common/http';
 
 import {MatTreeModule} from '@angular/material/tree'; 
 import {MatListModule} from '@angular/material/list'; 
@@ -60,6 +61,7 @@ import { CustomerProfileViewComponent } from './customer-profile-view/customer-p
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
@@ -73,7 +75,8 @@ import { CustomerProfileViewComponent } from './customer-profile-view/customer-p
     MatSelectModule,
     MatSidenavModule,
     MatListModule,
-    MatTreeModule
+    MatTreeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
