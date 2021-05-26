@@ -4,7 +4,7 @@ import { AppService } from '../app.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms'
 import {HttpClient} from '@angular/common/http';
- 
+
 @Component({ 
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -35,16 +35,14 @@ export class LoginPageComponent implements OnInit {
       if (this.output == "S") {
         this.share.custidUpdate(this.f.value.username);
         this.share.login();
-        this.router.navigate(['/inquiry']);
+        this.router.navigate(['/profile-view']);
       }
       else {
         alert("Invalid Login. Check Your Credentials")
       }
     });
- 
   }
 }
-
 
 
 //KC#01int%^&

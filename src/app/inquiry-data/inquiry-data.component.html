@@ -3,28 +3,21 @@
 <div  class="example-container mat-elevation-z8">
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"  >
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-   
-    <!-- Position Column -->
     <ng-container matColumnDef="DOC_NUMBER">
       <th mat-header-cell *matHeaderCellDef> DOC_NUMBER </th>
       <td mat-cell *matCellDef="let element"> {{element.DOC_NUMBER}} </td>
     </ng-container>
   
-    <!-- Name Column -->
     <ng-container matColumnDef="ITEM_NUMBER">
       <th mat-header-cell *matHeaderCellDef>  ITEM_NUMBER </th>
       <td mat-cell *matCellDef="let element"> {{element.ITEM_NUMBER}} </td>
     </ng-container>
   
-    <!-- Weight Column -->
     <ng-container matColumnDef="MATERIAL">
       <th mat-header-cell *matHeaderCellDef> MATERIAL </th>
       <td mat-cell *matCellDef="let element"> {{element.MATERIAL}} </td>
     </ng-container>
   
-    <!-- Symbol Column -->
     <ng-container matColumnDef="CREATE_DATE">
       <th mat-header-cell *matHeaderCellDef> CREATE_DATE </th>
       <td mat-cell *matCellDef="let element"> {{element.CREATE_DATE}} </td>

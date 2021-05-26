@@ -5,16 +5,16 @@ table {
 tr:hover {
     background-color: #f5f5f5;
 }
+
 tr:nth-child(even) {background-color: #f2f2f2;}
 
 th {
     background-color: #4CAF50;
     color: white;
-  }
-
+}
 
 .example-container {
     height: auto;
     overflow: auto;
     margin-bottom: 3rem;
-  }
+}

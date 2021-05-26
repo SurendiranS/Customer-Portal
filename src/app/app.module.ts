@@ -35,10 +35,7 @@ import { CreditDebitComponent } from './credit-debit/credit-debit.component';
 import { OverallSalesComponent } from './overall-sales/overall-sales.component';
 import { MasterUploadComponent } from './master-upload/master-upload.component';
 import { CustomerProfileViewComponent } from './customer-profile-view/customer-profile-view.component';
-
-
-
-
+import { CreditCreditComponent } from './credit-credit/credit-credit.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +51,8 @@ import { CustomerProfileViewComponent } from './customer-profile-view/customer-p
     CreditDebitComponent,
     OverallSalesComponent,
     MasterUploadComponent,
-    CustomerProfileViewComponent
+    CustomerProfileViewComponent,
+    CreditCreditComponent
   ],
   imports: [
     BrowserModule,

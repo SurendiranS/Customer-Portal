@@ -37,7 +37,7 @@
                 <mat-icon matListAvatar>perm_contact_calendar</mat-icon>
                 <h3>User Profile</h3>
             </a> -->
-             
+
             <div mat-subheader>Customer Dashboard</div>
             <a id="inquiry" mat-list-item [routerLink]="['./inquiry']" (click)="sidenav.close()" routerLinkActive="active">
                 <mat-icon matListAvatar>table_chart</mat-icon>
@@ -51,7 +51,6 @@
                 <mat-icon matListAvatar>pending_actions</mat-icon>
                 <h3>List of Delivery</h3>
             </a>
-
             <div mat-subheader>Customer Financial Sheet</div>
             <a id="invoice" mat-list-item [routerLink]="['./invoice']" (click)="sidenav.close()" routerLinkActive="active">
                 <mat-icon matListAvatar>receipt</mat-icon>
@@ -63,19 +62,21 @@
             </a>
             <a id="credit" mat-list-item [routerLink]="['./credit-debit']" (click)="sidenav.close()" routerLinkActive="active">
                 <mat-icon matListAvatar>receipt</mat-icon>
-                <h3>Credit/Debit memo</h3>
+                <h3>Debit memo</h3>
+            </a>
+            <a id="credit" mat-list-item [routerLink]="['./credit-credit']" (click)="sidenav.close()" routerLinkActive="active">
+                <mat-icon matListAvatar>receipt</mat-icon>
+                <h3>Credit memo</h3>
             </a>
             <a id="overall" mat-list-item [routerLink]="['./overallSales']" (click)="sidenav.close()" routerLinkActive="active">
                 <mat-icon matListAvatar>receipt</mat-icon>
                 <h3>Overall sales data</h3>
             </a>
-
             <!-- <div mat-subheader>Customer Master Data</div> -->
             <a id="master-upload" mat-list-item [routerLink]="['./master-upload']" (click)="sidenav.close()" routerLinkActive="active">
                 <mat-icon matListAvatar>receipt</mat-icon>
                 <h3>Master Data Upload</h3>
-            </a>
-            
+            </a>       
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content style="background-color:#8d31e1; padding: 3rem;"> 

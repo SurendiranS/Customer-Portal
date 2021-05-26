@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import {LoginPageComponent} from './login-page/login-page.component';
 import {CustomerProfileComponent} from './customer-profile/customer-profile.component';
 import {InquiryDataComponent} from './inquiry-data/inquiry-data.component';
@@ -12,9 +11,10 @@ import {PaymentComponent} from './payment/payment.component'
 import {OverallSalesComponent} from './overall-sales/overall-sales.component'
 import {MasterUploadComponent} from './master-upload/master-upload.component'
 import {CustomerProfileViewComponent} from './customer-profile-view/customer-profile-view.component'
+import {CreditCreditComponent} from './credit-credit/credit-credit.component'
+
 
 const routes: Routes = [
-  
   {path:'', component:LoginPageComponent},
   {path:'profile', component:CustomerProfileComponent},
   {path:'inquiry', component:InquiryDataComponent},
@@ -27,7 +27,8 @@ const routes: Routes = [
   {path:'invoice',component:InvoiceComponent},
   {path:'master-upload',component:MasterUploadComponent},
   {path:'profile-view', component:CustomerProfileViewComponent},
-  { path: '**', component: LoginPageComponent }
+  {path:'credit-credit', component:CreditCreditComponent},
+  {path:'**', component: LoginPageComponent }
 ];
 
 @NgModule({

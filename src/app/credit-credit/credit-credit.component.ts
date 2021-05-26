@@ -1,8 +1,6 @@
-// import { GlobalPositionStrategy } from '@angular/cdk/overlay';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import {HttpClient} from '@angular/common/http';
-
 
 export interface Item {
   GJAHR: string;
@@ -13,15 +11,14 @@ export interface Item {
 } 
 
 @Component({
-  selector: 'app-credit-debit',
-  templateUrl: './credit-debit.component.html',
-  styleUrls: ['./credit-debit.component.css']
+  selector: 'app-credit-credit',
+  templateUrl: './credit-credit.component.html',
+  styleUrls: ['./credit-credit.component.css']
 })
-export class CreditDebitComponent implements OnInit {
+export class CreditCreditComponent implements OnInit {
   ELEMENT_DATA: Item[]=[];
   displayedColumns: string[]=['GJAHR','AUGDT','AUGBL','PSWBT','PSWSL'];
   dataSource =new MatTableDataSource<Item>(this.ELEMENT_DATA);
-
   constructor(private http: HttpClient) { }
   result : any;
   ngOnInit(): void {
@@ -30,18 +27,5 @@ export class CreditDebitComponent implements OnInit {
     // this.dataSource.data.push
     console.log(this.dataSource);
   }
-  
+
 }
-
-
-// "GJAHR": 2015,
-// "AUGDT": "0000-00-00",
-// "AUGBL": "",
-// "PSWBT": "297000.00",
-// "PSWSL": "SAR"
-
-// Fiscal Year
-// Clearing Date
-// Doc No of clr doc
-// Amt for Upt in GL 
-// Upt currency for GL 
