@@ -1,26 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-   
+import { MatTableDataSource } from '@angular/material/table';
+import {HttpClient} from '@angular/common/http';
 
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
+export interface Item {
+  COMPANY: string;
+  CUSTOMEER: string ;
+  FISO: string;
+  DOCUMENT_NO: string;
+  ITEM: string;
+  PURCHASING_DATE: string;
+  DOCUMENT_DATE: string;
+  ENTRY_DATE: string;
+  CURRENCY: string;
+  LOCAL_CURRENCY:string;
+  LOCAL_AMOUNT: string;
+  AMOUNT_DECC: string;
+  ITEM_TEXT: string;
+  BLINE_DATE: string;
+} 
 
 
 @Component({
@@ -29,13 +27,19 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
-
-  constructor() { }
+  ELEMENT_DATA: Item[]=[];
+  displayedColumns: string[] = ['COMPANY', 'CUSTOMEER', 'FISO', 'DOCUMENT_NO','ITEM','PURCHASING_DATE','DOCUMENT_DATE',
+  'ENTRY_DATE','CURRENCY','LOCAL_CURRENCY','LOCAL_AMOUNT','AMOUNT_DECC','ITEM_TEXT','BLINE_DATE'];
+  dataSource =new MatTableDataSource<Item>(this.ELEMENT_DATA);
+  result : any;
+  // var time = new Date();
+  // time = 
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    let res=this.http.post('http://localhost:3000/payment',undefined);
+    res.subscribe(result => this.dataSource.data = result as Item[]);
+    // this.dataSource.data.push
+    console.log(this.dataSource);
   }
-
 }

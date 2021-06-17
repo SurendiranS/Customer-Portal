@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginCredentials } from '../login-credentials';
+// import { LoginCredentials } from '../login-credentials';
 import { AppService } from '../app.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms'
@@ -12,7 +12,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class LoginPageComponent implements OnInit {
   title = 'Customer Portal';
-  credentialsModel = new LoginCredentials('', '');
+  // credentialsModel = new LoginCredentials('', '');
   output:any;
   custid:any;
   f=new FormGroup({
@@ -43,6 +43,5 @@ export class LoginPageComponent implements OnInit {
     });
   }
 }
-
 
 //KC#01int%^&

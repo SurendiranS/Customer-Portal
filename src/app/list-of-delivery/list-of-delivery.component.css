@@ -1,20 +1,20 @@
 table {
-    width: 100%;
+  width: 100%;
 }
 
 tr:hover {
-    background-color: #f5f5f5;
+  background-color: #f5f5f5;
 }
 tr:nth-child(even) {background-color: #f2f2f2;}
 
 th {
-    background-color: #4CAF50;
-    color: white;
-  }
+  background-color: #4CAF50;
+  color: white;
+}
 
 
 .example-container {
-    height: 425px;
-    overflow: auto;
-    padding-bottom: 3rem;
-  }
+  height: auto;
+  overflow: auto;
+  margin-bottom: 3rem;
+}

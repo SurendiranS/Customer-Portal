@@ -30,7 +30,6 @@ export class CreditDebitComponent implements OnInit {
     // this.dataSource.data.push
     console.log(this.dataSource);
   }
-  
 }
 
 

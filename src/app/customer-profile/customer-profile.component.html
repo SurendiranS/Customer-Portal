@@ -5,67 +5,76 @@
             <p class="card-category">Complete your profile</p>
         </div>
         <div class="card-body shadow p-3">
-            <form>
+            <form class="update-form" novalidate [formGroup]="u" (ngSubmit)="onSubmit()">
                 <div class="row">
                     <div class="col-md-4">
                         <mat-form-field class="example-full-width">                            
-                            <input matInput placeholder="Customer Number " disabled>
+                            <input matInput placeholder="Customer Number" type="text" formControlName="KUNNR" class="form-control"
+                            name='KUNNR'>
                         </mat-form-field>
                     </div> 
-                    
                     <div class="col-md-4">
                         <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Fist Name" type="text">
+                            <input matInput placeholder="Fist Name" type="text" required formControlName="NAME1" class="form-control"
+                            name='NAME1'>
                         </mat-form-field>
                     </div>
                     <div class="col-md-4">
                         <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Last Name" type="text">
+                            <input matInput placeholder="Last Name" type="text" required formControlName="NAME2" class="form-control"
+                            name='NAME2'>
                         </mat-form-field>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Sort Field">
+                            <input matInput placeholder="Sort Field" disabled>
                         </mat-form-field>
                     </div>
                     <div class="col-md-6">
                         <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Telephone Number" type="phone">
+                            <input matInput placeholder="Telephone Number" type="phone" required formControlName="TELF1" class="form-control"
+                            name='TELF1'>
                         </mat-form-field>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Houser Number and Street Number" type="text">
+                            <input matInput placeholder="Houser Number and Street Number" type="text" required formControlName="STRAS" class="form-control"
+                            name='STRAS'>
                         </mat-form-field>
                     </div>
                     <div class="col-md-6">
                         <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Region" type="text">
+                            <input matInput placeholder="Region" type="text" required formControlName="REGIO" class="form-control"
+                            name='REGIO'>
                         </mat-form-field>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <mat-form-field class="example-full-width">
-                            <input matInput placeholder="City" type="text">
+                            <input matInput placeholder="City" type="text" required formControlName="ORTO1" class="form-control"
+                            name='ORTO1'>
                         </mat-form-field>
                     </div>
                     <div class="col-md-4">
                         <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Country" type="text">
+                            <input matInput placeholder="Country" type="text" required formControlName="LAND1" class="form-control"
+                            name='LAND1'>
                         </mat-form-field>
                     </div>
                     <div class="col-md-4">
                         <mat-form-field class="example-full-width">
-                            <input matInput placeholder="Postal Code" type="text">
+                            <input matInput placeholder="Postal Code" type="text" required formControlName="PSTLZ" class="form-control"
+                            name='PSTLZ'>
                         </mat-form-field>
                     </div>
                 </div>
-                <button mat-raised-button type="submit" class="btn btn-danger pull-right" >Update Profile</button>
+                <!-- <button mat-raised-button type="submit" class="btn btn-danger pull-right" >Update Profile</button> -->
+                <button mat-raised-button color="primary">Update Profile</button>
                 <div class="clearfix"></div>
             </form>
         </div>

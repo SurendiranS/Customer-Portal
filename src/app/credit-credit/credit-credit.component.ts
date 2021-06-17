@@ -22,10 +22,9 @@ export class CreditCreditComponent implements OnInit {
   constructor(private http: HttpClient) { }
   result : any;
   ngOnInit(): void {
-    let res=this.http.post('http://localhost:3000/debit',undefined);
+    let res=this.http.post('http://localhost:3000/credit',undefined);
     res.subscribe(result => this.dataSource.data = result as Item[]);
     // this.dataSource.data.push
     console.log(this.dataSource);
   }
-
 }

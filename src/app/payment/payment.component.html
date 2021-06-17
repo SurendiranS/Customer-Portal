@@ -7,29 +7,84 @@
           The actual rendered columns are set as a property on the row definition" -->
   
     <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+    <ng-container matColumnDef="COMPANY">
+      <th mat-header-cell *matHeaderCellDef> COMPANY </th>
+      <td mat-cell *matCellDef="let element"> {{element.COMPANY}} </td>
     </ng-container>
   
     <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <ng-container matColumnDef="CUSTOMEER">
+      <th mat-header-cell *matHeaderCellDef> CUSTOMEER </th>
+      <td mat-cell *matCellDef="let element"> {{element.CUSTOMEER}} </td>
     </ng-container>
   
     <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> Weight </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+    <ng-container matColumnDef="FISO">
+      <th mat-header-cell *matHeaderCellDef> FISO </th>
+      <td mat-cell *matCellDef="let element"> {{element.FISO}} </td>
     </ng-container>
   
     <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th mat-header-cell *matHeaderCellDef> Symbol </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+    <ng-container matColumnDef="DOCUMENT_NO">
+      <th mat-header-cell *matHeaderCellDef> DOC_NO </th>
+      <td mat-cell *matCellDef="let element"> {{element.DOCUMENT_NO}} </td>
     </ng-container>
   
+    <ng-container matColumnDef="ITEM">
+      <th mat-header-cell *matHeaderCellDef> ITEM </th>
+      <td mat-cell *matCellDef="let element"> {{element.ITEM}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="PURCHASING_DATE">
+      <th mat-header-cell *matHeaderCellDef> PUR_DATE </th>
+      <td mat-cell *matCellDef="let element"> {{element.PURCHASING_DATE}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="DOCUMENT_DATE">
+      <th mat-header-cell *matHeaderCellDef> DOC_DATE </th>
+      <td mat-cell *matCellDef="let element"> {{element.DOCUMENT_DATE}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ENTRY_DATE">
+      <th mat-header-cell *matHeaderCellDef> ENTRY_DATE </th>
+      <td mat-cell *matCellDef="let element"> {{element.ENTRY_DATE}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="CURRENCY">
+      <th mat-header-cell *matHeaderCellDef> CURRENCY </th>
+      <td mat-cell *matCellDef="let element"> {{element.CURRENCY}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="LOCAL_CURRENCY">
+      <th mat-header-cell *matHeaderCellDef> LOC_CURR </th>
+      <td mat-cell *matCellDef="let element"> {{element.LOCAL_CURRENCY}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="LOCAL_AMOUNT">
+      <th mat-header-cell *matHeaderCellDef> LOC_AMT </th>
+      <td mat-cell *matCellDef="let element"> {{element.LOCAL_AMOUNT}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="AMOUNT_DECC">
+      <th mat-header-cell *matHeaderCellDef> AMT_DECC </th>
+      <td mat-cell *matCellDef="let element"> {{element.AMOUNT_DECC}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ITEM_TEXT">
+      <th mat-header-cell *matHeaderCellDef> ITEM_TEXT </th>
+      <td mat-cell *matCellDef="let element"> {{element.ITEM_TEXT}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="BLINE_DATE">
+      <th mat-header-cell *matHeaderCellDef> BLINE_DATE </th>
+      <td mat-cell *matCellDef="let element"> {{element.BLINE_DATE}} </td>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="PAY_AGE">
+      <th mat-header-cell *matHeaderCellDef> PAY_AGE </th>
+      <td mat-cell *matCellDef="let element"> {{element.BLINE_DATE}} </td>
+    </ng-container> -->
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>

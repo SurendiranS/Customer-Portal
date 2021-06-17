@@ -41,7 +41,7 @@ export class MasterUploadComponent implements OnInit {
       el.setAttribute("download", 'xlsxtojson.json');
     }, 1000)
   }
-
+  
   ngOnInit(): void {
   }
 
